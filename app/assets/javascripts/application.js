@@ -13,5 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap-sprockets
+//= require admin/places/jquery.locationpicker
+//= require admin/places/places
+//= require google_map.js
+
+$(document).on('turbolinks:load', function() {
+  $('.flash').delay(3000).fadeOut();
+});

@@ -20,13 +20,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  static_pages:
-    itravel: "ITravel"
-    itravel_copyright: "Copyright © ITravel 2016. All rights reserved."
-    itravel_logo: "ITRAVEL"
-    home:
-      news_feed: "News Feed"
   devise:
     omniauth_callbacks:
       success: "Login Success !"
-
+  flashs:
+    access_denied: "Permission denied"
+    user:
+      mustlogin: "You need to login to access!"
+    messages:
+      created: "%{model_name} was created successfully!"
+      not_created: "%{model_name} couldn't be created"
+      deleted: "%{model_name} was deleted successfully!"
+      not_deleted: "%{model_name} couldn't be deleted!"
+      updated: "%{model_name} was updated successfully!"
+      not_updated: "%{model_name} couldn't be updated"
+  error:
+    form: "The form contains "
+    supervisor: "Must has at least one supervisor"
+    leader: "Must has one leader"
+    wrong_end_date: "Must be greater than start date"
+    not_authorize: "You are not authorized to access this page."
+    errors:
+      zero: "no errors"
+      one: "1 error"
+      other: "%{count} errors"

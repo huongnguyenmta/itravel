@@ -1,0 +1,27 @@
+.home-body {
+  width: 100%;
+  display: flex;
+  .home-menu-left {
+    width: 20%;
+    float: left;
+  }
+
+  .news-feed {
+    margin: 0 auto;
+    width: 55%;
+  }
+
+  .home-menu-right {
+    width: 20%;
+    float: right;
+  }
+
+  .heading {
+    color: black;
+    font-weight: bold;
+    font-family: Time New Roman;
+    &:hover {
+      color: red;
+    }
+  }
+}

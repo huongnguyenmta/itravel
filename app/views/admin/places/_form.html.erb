@@ -1,0 +1,37 @@
+<div class="form-place">
+  <div class="left-form">
+    <%= form_for [:admin, @place] do |f| %>
+      <%= render "shared/error_messages", object: @place %>
+      <div class="field form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control",
+          placeholder: t(".enter_name") %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control", id: "place-address",
+          placeholder: t(".enter_address") %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.hidden_field :latitude, class: "form-group", id: "place-lat" %>
+      </div>
+      <div class="field form-group">
+        <%= f.hidden_field :longitude, class: "form-group", id: "place-long" %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", id: "description",
+          placeholder: t(".enter_description") %>
+      </div>
+
+      <%= f.submit yield: :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="map">
+    <p><strong><%= t ".map" %></strong></p>
+    <div id="place-map"></div>
+  </div>
+</div>
