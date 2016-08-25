@@ -274,5 +274,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.omniauth :facebook,ENV["app_id"], ENV["app_secret"]
+  config.omniauth :facebook, ENV["app_id"], ENV["app_secret"]
+  config.omniauth :google_oauth2, ENV["client_id"], ENV["client_secret"]
 end

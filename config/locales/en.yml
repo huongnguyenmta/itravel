@@ -26,3 +26,7 @@ en:
     itravel_logo: "ITRAVEL"
     home:
       news_feed: "News Feed"
+  devise:
+    omniauth_callbacks:
+      success: "Login Success !"
+
