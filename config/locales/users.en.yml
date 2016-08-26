@@ -2,9 +2,6 @@ en:
   users:
     avatar:
       error_size: "should be less than 5MB"
-    callbacks:
-      google_oauth2:
-        success: "Login Success by %{kind}"
     login:
       signin: "Login"
       signout: "Logout"

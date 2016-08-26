@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validate :avatar_size
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
-    :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+    :omniauthable, omniauth_providers: [:facebook, :google_oauth2, :twitter]
 
   has_many :review_businesses, dependent: :destroy
   has_many :businesses, through: :review_businesses, dependent: :destroy
@@ -23,12 +23,16 @@ class User < ApplicationRecord
 
   class << self
     def from_omniauth auth
-      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        user.email = auth.info.email
-        user.name = auth.info.name
-        user.avatar = auth.info.image
-        user.password = Devise.friendly_token[0,20]
+      user = where(email: auth.info.email).first
+      unless user
+        user = User.new
+        user.email = auth.provider == "twitter" ? auth.info.nickname.concat("@twiter.com") : auth.info.email
+        user.name = auth.info.name if user.name.blank?
+        user.password = Devise.friendly_token[0,20] if user.password.blank?
+        user.provider = nil
+        user.save
       end
+      user
     end
 
     def new_with_session params, session
