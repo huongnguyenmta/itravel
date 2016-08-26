@@ -228,7 +228,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
-    json (2.0.2)
+    json (1.8.3)
     jwt (1.5.4)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
@@ -259,6 +259,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    oauth (0.5.1)
     oauth2 (1.2.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -275,9 +276,15 @@ GEM
       multi_json (~> 1.3)
       omniauth (>= 1.1.1)
       omniauth-oauth2 (>= 1.3.1)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    omniauth-twitter (1.2.0)
+      json (~> 1.3)
+      omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
     pkg-config (1.1.7)
     polyamorous (1.3.1)
@@ -339,7 +346,7 @@ GEM
     rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
-    rspec-rails (3.5.1)
+    rspec-rails (3.5.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -425,6 +432,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
+  omniauth-twitter (= 1.2.0)
   pry
   public_activity
   puma (~> 3.0)
@@ -442,3 +450,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console
   whenever
+
+BUNDLED WITH
+   1.12.2

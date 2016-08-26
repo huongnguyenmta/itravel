@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-   config.secret_key = "c5095f89b146e602b2a5e77d723061cbcee3c200929914d8ebd700642ea6952abaa1b28a20cb1b9247ab2745c85d84927421d180b2054aa48b85d23f7e21759f"
+  config.secret_key = "c5095f89b146e602b2a5e77d723061cbcee3c200929914d8ebd700642ea6952abaa1b28a20cb1b9247ab2745c85d84927421d180b2054aa48b85d23f7e21759f"
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -65,7 +65,6 @@ Devise.setup do |config|
   # enable it only for database authentication. The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
   # config.http_authenticatable = false
-
   # If 401 status code should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
 
@@ -274,6 +273,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.omniauth :facebook, ENV["app_id"], ENV["app_secret"]
-  config.omniauth :google_oauth2, ENV["client_id"], ENV["client_secret"]
+  config.omniauth :facebook, ENV["facebook_key"], ENV["facebook_secret"]
+  config.omniauth :google_oauth2, ENV["google_key"], ENV["google_secret"]
+  config.omniauth :twitter, ENV["twitter_key"], ENV["twitter_secret"]
 end

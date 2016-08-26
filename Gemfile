@@ -12,7 +12,6 @@ gem "jbuilder", "~> 2.5"
 gem "redis"
 gem "bcrypt"
 gem "bootstrap-sass"
-gem "devise"
 gem "cancancan"
 gem "ransack"
 gem "kaminari"
@@ -31,6 +30,8 @@ gem "figaro"
 gem "carrierwave"
 gem "mini_magick"
 gem "fog", "1.36.0"
+gem "devise"
+gem "omniauth-twitter", "1.2.0"
 
 group :development, :test do
   gem "byebug", platform: :mri
@@ -45,6 +46,4 @@ group :development, :test do
   gem "listen", "~> 3.0.5"
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :jruby]
-
