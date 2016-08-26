@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   validate :avatar_size
+  validates :name, presence: true, length: {maximum: 30},
+    uniqueness: {case_sensitive: false}
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
@@ -20,6 +22,8 @@ class User < ApplicationRecord
     foreign_key: :following_id, dependent: :destroy
   has_many :following, through: :active_follows, source: :following
   has_many :followers, through: :passive_follows, source: :follower
+
+  enum user_role: [ :user, :mod, :admin ]
 
   class << self
     def from_omniauth auth
