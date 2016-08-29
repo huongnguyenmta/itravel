@@ -30,11 +30,6 @@ body {
       margin-top: 100px;
     }
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
-    text-align: center;
-  }
 }
 
 .home-body {
@@ -67,10 +62,15 @@ body {
 
   .notice{
     color: green;
+    margin: 0px !important;
+    padding: 5px !important;
   }
 
   .alert{
     color: red;
+    margin: 0px !important;
+    padding: 5px !important;
+    margin-bottom: 0px !important;
   }
 
   .header-drop{
