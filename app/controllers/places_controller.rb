@@ -5,7 +5,6 @@ class PlacesController < ApplicationController
   end
 
   def show
-
   end
 
   private

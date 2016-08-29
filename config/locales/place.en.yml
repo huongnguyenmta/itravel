@@ -1,0 +1,9 @@
+en:
+  places:
+    show:
+      hotel: "Hotel"
+      restaurent: "Restaurent"
+      review: "Review"
+      direction: "Direction"
+      nearby_place: "Nearby place"
+      description: "Description"

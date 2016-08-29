@@ -1,0 +1,34 @@
+<% provide :title, @place.name %>
+<div class="row">
+  <h1><%= @place.name %></h1>
+  <h3><%= @place.town.name %> - <%= @place.province.name %></h3>
+  <div class="place_album"></div>
+  <div class="place_info_box">
+    <div id="googleMap" data-lat="<%= @place.latitude %>"
+      data-long="<%= @place.longitude %>"></div>
+    <div class="place_button_wrapper">
+      <div class="place_button">
+        <span class="button-content"><%= t ".hotel" %></span>
+      </div>
+      <div class="place_button">
+        <span class="button-content"><%= t ".restaurent" %></span>
+      </div>
+      <div class="place_button">
+        <span class="button-content"><%= t ".review" %></span>
+      </div>
+      <div class="place_button">
+        <span class="button-content"><%= t ".direction" %></span>
+      </div>
+      <div class="place_button">
+        <span class="button-content"><%= t ".nearby_place" %></span>
+      </div>
+    </div>
+  </div>
+  <div class="description_box">
+    <h1><%= t "description" %></h1>
+    <p><%= @place.description %></p>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).onload = loadScript();
+</script>
