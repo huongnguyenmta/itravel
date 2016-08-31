@@ -7,3 +7,8 @@ en:
       direction: "Direction"
       nearby_place: "Nearby place"
       description: "Description"
+      get_direction: "Get Direction"
+      from: "from"
+      get_my_location: "Get my location"
+      submit: "Submit"
+      reset: "Reset"
