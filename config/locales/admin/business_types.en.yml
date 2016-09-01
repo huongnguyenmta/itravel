@@ -1,0 +1,16 @@
+en:
+  admin:
+    business_types:
+      index:
+        title: "List of Business types"
+        action: "Action"
+        tooltip_show: "Show"
+        tooltip_edit: "Edit"
+        tooltip_delete: "Delete"
+        confirm_delete: "Delete this business type?"
+      new:
+        title: "New business type"
+      show:
+        title: "Details of business type '%{business_type_name}'"
+      edit:
+        title: "Edit business type '%{business_type_name}'"

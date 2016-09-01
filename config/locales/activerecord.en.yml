@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      business_type: "Business type"
+    attributes:
+      business_type:
+        id: "Id"
+        name: "Name"
+        created_at: "Created at"
+        updated_at: "Updated at"

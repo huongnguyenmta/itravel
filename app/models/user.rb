@@ -23,7 +23,7 @@ class User < ApplicationRecord
   has_many :following, through: :active_follows, source: :following
   has_many :followers, through: :passive_follows, source: :follower
 
-  enum user_role: [ :user, :mod, :admin ]
+  enum role: [:user, :mod, :admin]
 
   class << self
     def from_omniauth auth

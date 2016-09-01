@@ -1,0 +1,42 @@
+<h1><%= t ".title" %></h1>
+<hr>
+<div class="menu">
+  <ul class="nav nav-tabs">
+    <%= menu_for({url: url_for([:admin, :business_types]), active: true, action: :index},
+      {url: url_for([:admin, :business_type, action: :new]), action: :new}) %>
+  </ul>
+</div>
+<table class="table table-hovered">
+  <thead>
+    <th><%= BusinessType.human_attribute_name "id" %></th>
+    <th><%= BusinessType.human_attribute_name "name" %></th>
+    <th><%= BusinessType.human_attribute_name "created_at" %></th>
+    <th><%= BusinessType.human_attribute_name "updated_at" %></th>
+    <th><%= t ".action" %></th>
+  </thead>
+  <tbody>
+    <% @business_types.each do |business_type| %>
+      <tr>
+        <td><%= business_type.id %></td>
+        <td><%= business_type.name %></td>
+        <td><%= business_type.created_at %></td>
+        <td><%= business_type.updated_at %></td>
+        <td>
+          <%= link_to admin_business_type_path(business_type),
+            data: {toggle: "tooltip"}, title: t(".tooltip_show") do %>
+            <span class="glyphicon glyphicon-info-sign"></span>
+          <% end %>
+          <%= link_to edit_admin_business_type_path(business_type),
+            data: {toggle: "tooltip"}, title: t(".tooltip_edit")  do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+          <%= link_to admin_business_type_path(business_type), method: :delete,
+            data: {confirm: t(".confirm_delete"), toggle: "tooltip"},
+            title: t(".tooltip_delete") do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

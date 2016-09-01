@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery prepend: true
   before_action :configure_permitted_parameters, if: :devise_controller?
   include CanCan::ControllerAdditions
+  include ApplicationHelper
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: exception.message
