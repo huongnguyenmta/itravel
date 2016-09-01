@@ -1,32 +1,51 @@
 <% provide :title, @place.name %>
 <div class="row">
-  <h1><%= @place.name %></h1>
+  <h1 id="place-name" data-name="<%= @place.name %>"><%= @place.name %></h1>
   <h3><%= @place.town.name %> - <%= @place.province.name %></h3>
   <div class="place_album"></div>
   <div class="place_info_box">
     <div id="googleMap" data-lat="<%= @place.latitude %>"
       data-long="<%= @place.longitude %>"></div>
     <div class="place_button_wrapper">
-      <div class="place_button">
-        <span class="button-content"><%= t ".hotel" %></span>
-      </div>
-      <div class="place_button">
-        <span class="button-content"><%= t ".restaurent" %></span>
-      </div>
-      <div class="place_button">
-        <span class="button-content"><%= t ".review" %></span>
-      </div>
-      <div class="place_button">
-        <span class="button-content"><%= t ".direction" %></span>
-      </div>
-      <div class="place_button">
-        <span class="button-content"><%= t ".nearby_place" %></span>
-      </div>
+      <%= link_to "#", class: "info-link" do %>
+        <div class="place_button">
+        <span class="button-content"><%= t ".hotel" %></span></div>
+      <% end %>
+      <%= link_to "#", class: "info-link" do %>
+        <div class="place_button">
+        <span class="button-content"><%= t ".restaurent" %></span></div>
+      <% end %>
+      <%= link_to "#", class: "info-link" do %>
+        <div class="place_button">
+        <span class="button-content"><%= t ".review" %></span></div>
+      <% end %>
+      <%= link_to "#", class: "info-link" do %>
+        <div class="place_button" id="get-direction">
+        <span class="button-content"><%= t ".direction" %></span></div>
+      <% end %>
+      <%= link_to "#", class: "info-link" do %>
+        <div class="place_button">
+        <span class="button-content"><%= t ".nearby_place" %></span></div>
+      <% end %>
     </div>
   </div>
   <div class="description_box">
     <h1><%= t "description" %></h1>
     <p><%= @place.description %></p>
+  </div>
+  <div class="row">
+    <div id="direction-box">
+        <h1><%= t ".get_direction" %></h1>
+        <%= form_tag "#", id: "calculate-route", class: "form-inline", method: :get do %>
+          <%= label_tag t(".from") %>
+          <%= text_field_tag t(".from"), nil , class: "form-control", "required": "required" %>
+          <%= submit_tag t(".submit"), 'data-disable-with': false, class: "btn btn-primary" %>
+          <%= button_tag t(".reset"), type: :reset, class: "btn btn-danger" %>
+          <%= link_to t(".get_my_location"), "#", id: "from-link" %>
+        <% end %>
+      <div id="map"></div>
+      <p id="error"></p>
+    </div>
   </div>
 </div>
 <script type="text/javascript">
