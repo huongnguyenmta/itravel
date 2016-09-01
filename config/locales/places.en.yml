@@ -12,3 +12,14 @@ en:
       get_my_location: "Get my location"
       submit: "Submit"
       reset: "Reset"
+
+  admin:
+    places:
+      form:
+        enter_name: "Enter place name..."
+        enter_address: "Enter place address.."
+        enter_description: "Enter description.."
+        search_address: "Search address"
+        map: "Map"
+      new:
+        new_place: "Create new place"

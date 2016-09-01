@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(version: 20160829035923) do
 
   create_table "places", force: :cascade do |t|
     t.string   "name"
+    t.string   "address"
     t.decimal  "longitude"
     t.decimal  "latitude"
     t.string   "description"

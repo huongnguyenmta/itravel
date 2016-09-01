@@ -29,4 +29,12 @@ module ApplicationHelper
       "<i class='glyphicon glyphicon-pencil'></i>"
     end
   end
+
+  def flash_message flash_type
+    t "flashs.messages.#{flash_type}", model_name: controller_name.classify
+  end
+
+  def display_flash message, message_type
+    "<div class='alert alert-#{message_type} flash'>#{message}</div>".html_safe
+  end
 end

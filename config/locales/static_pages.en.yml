@@ -1,0 +1,8 @@
+en:
+  static_pages:
+    itravel: "ITravel"
+    footer_copyright: "Copyright © ITravel 2016. All rights reserved."
+    logo: "ITRAVEL"
+    home:
+      news_feed: "News Feed"
+      place: "Place"

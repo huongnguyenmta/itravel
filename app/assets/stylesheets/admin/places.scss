@@ -1,0 +1,25 @@
+.form-place {
+  display: flex;
+
+  .left-form {
+    width: 50%;
+    margin-right: 30px;
+    background-color: #fff;
+    padding: 20px;
+
+    #description {
+      resize: vertical;
+    }
+  }
+
+  .map {
+    #place-address {
+      margin-bottom: 10px;
+    }
+
+    #place-map {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
