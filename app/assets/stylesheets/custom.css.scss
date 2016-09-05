@@ -40,3 +40,7 @@ body {
   margin: auto;
   position: absolute;
 }
+
+.row > * {
+  position: static !important;
+}

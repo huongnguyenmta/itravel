@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "places#new"
     resources :business_types
-    resources :places, only: [:new, :create, :edit, :update]
+    resources :places, except: :show
   end
 end

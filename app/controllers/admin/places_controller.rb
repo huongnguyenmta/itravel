@@ -1,6 +1,12 @@
 class Admin::PlacesController < Admin::BaseController
   load_and_authorize_resource
 
+  def index
+    @search = Place.all.ransack params[:q]
+    @places = @search.result.order(:name).page(params[:page])
+      .per Settings.places.per_page
+  end
+
   def new
   end
 
@@ -20,11 +26,20 @@ class Admin::PlacesController < Admin::BaseController
   def update
     if @place.update_attributes place_params
       flash[:success] = flash_message "updated"
-      redirect_to :back
+      redirect_to admin_places_url
     else
       flash[:danger] = flash_message "not_updated"
       render :edit
     end
+  end
+
+  def destroy
+    if @place.destroy
+      flash[:success] = flash_message "deleted"
+    else
+      flash[:danger] = flash_message "not_deleted"
+    end
+    redirect_to admin_places_url
   end
 
   private

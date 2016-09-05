@@ -1,0 +1,38 @@
+<h1><%= t ".index_places" %></h1>
+<hr>
+<div class="menu">
+  <ul class="nav nav-tabs">
+    <%= menu_for({url: url_for([:admin, :places]), active: true, action: :index},
+      {url: url_for([:admin, :place, action: :new]), action: :new}) %>
+  </ul>
+</div>
+<br>
+<br>
+<div>
+  <%= search_form_for [:admin, @search], class: "form-inline" do |f| %>
+    <%= f.text_field :name_or_address_cont,
+      placeholder: t(".name_or_address"),
+      class: "form-control width_text_field_search" %>
+    <%= f.submit t(".search"),
+      class: "btn btn-info margin_left_btn_submit" %>
+  <% end %>
+</div>
+<br>
+<br>
+<div class="table-responsive">
+  <table class="table table-hovered">
+    <thead>
+      <th>
+        <%= sort_link @search, :name, t(".name") %>
+      </th>
+      <th><%= sort_link @search, :address, t(".address") %></th>
+      <th><%= sort_link @search, :created_at, t(".created_at") %></th>
+      <th><%= sort_link @search, :updated_at, t(".updated_at") %></th>
+      <th><%= t ".action" %></th>
+    </thead>
+    <tbody>
+      <%= render(partial: "place", collection: @places, as: :place) || t(".no_place_display") %>
+    </tbody>
+  </table>
+</div>
+<%= paginate @places %>

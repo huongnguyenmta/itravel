@@ -1,0 +1,21 @@
+<tr>
+  <td class="address_place_minwidth"><%= place.name %></td>
+  <td class="address_place_minwidth"><%= place.address %></td>
+  <td><%= place.created_at.strftime("%m/%d/%Y at %H:%M") %></td>
+  <td><%= place.updated_at.strftime("%m/%d/%Y at %H:%M") %></td>
+  <td>
+    <%= link_to admin_place_path(place),
+      data: {toggle: "tooltip"}, title: t(".tooltip_show") do %>
+      <span class="glyphicon glyphicon-info-sign"></span>
+    <% end %>
+    <%= link_to edit_admin_place_path(place),
+      data: {toggle: "tooltip"}, title: t(".tooltip_edit")  do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <% end %>
+    <%= link_to admin_place_path(place), method: :delete,
+      data: {confirm: t("admin.places.destroy.confirm_destroy"), toggle: "tooltip"},
+      title: t(".tooltip_delete") do %>
+      <span class="glyphicon glyphicon-remove"></span>
+    <% end %>
+  </td>
+</tr>

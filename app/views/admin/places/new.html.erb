@@ -1,2 +1,10 @@
-<h3><%= t ".new_place" %></h3>
+<h1><%= t ".new_place" %></h1>
+<hr>
+<div class="menu">
+  <ul class="nav nav-tabs">
+    <%= menu_for({url: url_for([:admin, @place]), action: :index},
+      {url: url_for([:admin, @place, action: :new]), action: :new, active: true}) %>
+  </ul>
+</div>
 <%= render "form" %>
+
