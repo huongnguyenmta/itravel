@@ -23,3 +23,5 @@ en:
         map: "Map"
       new:
         new_place: "Create new place"
+      edit:
+        edit_place: "Edit place"
